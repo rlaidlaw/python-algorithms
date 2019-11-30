@@ -4,7 +4,6 @@ def bubble_sort(data):
         for j in range(length - i):
             if data[j] > data[j+1]:
                 data[j], data[j+1] = data[j+1], data[j]
-    return data
 
 
 def selection_sort(data):
@@ -14,7 +13,6 @@ def selection_sort(data):
             if data[j] < data[min_index]:
                 min_index = j
         data[i], data[min_index] = data[min_index], data[i]
-    return data
 
 
 def merge_sort(data):
@@ -47,5 +45,3 @@ def merge_sort(data):
             data[k] = right[j]
             j = j + 1
             k = k + 1
-
-    return data
