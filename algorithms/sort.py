@@ -45,3 +45,22 @@ def merge_sort(data):
             data[k] = right[j]
             j = j + 1
             k = k + 1
+
+
+def quick_sort(data, left, right):
+    if left < right:
+        p = left + (right - left) // 2
+        pivot = data[p]
+        i = left
+        j = right
+        while True:
+            while data[i] < pivot:
+                i = i + 1
+            while data[j] > pivot:
+                j = j - 1
+            if i >= j:
+                p = j
+                break
+            data[i], data[j] = data[j], data[i]
+        quick_sort(data, left, p)
+        quick_sort(data, p + 1, right)

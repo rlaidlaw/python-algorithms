@@ -1,5 +1,10 @@
 import unittest
-from sort import bubble_sort, selection_sort, merge_sort
+from sort import (
+    bubble_sort,
+    selection_sort,
+    merge_sort,
+    quick_sort
+)
 
 
 class SortTestCase(unittest.TestCase):
@@ -56,6 +61,24 @@ class SortTestCase(unittest.TestCase):
         expected = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
         data = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
         merge_sort(data)
+        self.assertEqual(expected, data)
+
+    def test_quick_sort_with_unsorted_data(self):
+        expected = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        data = [2, 4, 6, 8, 10, 9, 7, 5, 3, 1]
+        quick_sort(data, 0, len(data) - 1)
+        self.assertEqual(expected, data)
+
+    def test_quick_sort_with_sorted_data(self):
+        expected = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        data = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        quick_sort(data, 0, len(data) - 1)
+        self.assertEqual(expected, data)
+
+    def test_quick_sort_with_reversed_data(self):
+        expected = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        data = [10, 9, 8, 7, 6, 5, 4, 3, 2, 1]
+        quick_sort(data, 0, len(data) - 1)
         self.assertEqual(expected, data)
 
 
