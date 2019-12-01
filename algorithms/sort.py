@@ -64,3 +64,14 @@ def quick_sort(data, left, right):
             data[i], data[j] = data[j], data[i]
         quick_sort(data, left, p)
         quick_sort(data, p + 1, right)
+
+
+def radix_sort(data, number_of_buckets, max_digits):
+    for k in range(max_digits):
+        buckets = [[] for bucket in range(number_of_buckets)]
+        for n in data:
+            digit = (n // number_of_buckets ** k) % number_of_buckets
+            buckets[digit].append(n)
+        del data[:]
+        for bucket in buckets:
+            data.extend(bucket)
