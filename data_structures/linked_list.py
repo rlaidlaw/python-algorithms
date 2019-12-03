@@ -64,12 +64,7 @@ class LinkedList:
         return data
 
     def __str__(self):
-        data = []
-        current = self.head
-        while current is not None:
-            data.append(current.get_data())
-            current = current.get_next()
-        return "[ " + " <-> ".join([str(d) for d in data]) + " ]"
+        return "[ " + " <-> ".join([str(d) for d in self.to_list()]) + " ]"
 
     def __eq__(self, other):
         return self.to_list() == other.to_list()

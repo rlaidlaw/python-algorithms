@@ -62,12 +62,10 @@ class LinkedListTestCase(unittest.TestCase):
         self.assertEqual(expected, actual)
 
     def test_to_list(self):
-        expected = [1, 2, 3, 4, 5, 6]
+        expected = [1, 2, 3, 4]
         linked_list = LinkedList()
+        linked_list.append(3)
         linked_list.append(4)
-        linked_list.append(5)
-        linked_list.append(6)
-        linked_list.insert(3)
         linked_list.insert(2)
         linked_list.insert(1)
         actual = linked_list.to_list()
